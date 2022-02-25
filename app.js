@@ -2,12 +2,14 @@ const express = require("express")
 
 const app = express()
 
+app.set("view engine", "pug")
+
 app.get("/", (req, res) => {
-    res.send("<h1>I love coding!</h1>")
+    res.render("index")
 })
 
-app.get("/hello", (req, res) => {
-    res.send("<h1>Hello, JavaScript Developer!</h1>")
+app.get("/about", (req, res) => {
+    res.render("about")
 })
 
 app.listen(3000, () => {
